@@ -1,0 +1,18 @@
+#####################
+### Input Selects ###
+#####################
+input_select:
+  lr_lamps_color_select:
+    name: LR Lamps Color Select
+    options:
+      - Warm
+      - Soft
+      - White
+      - Daylight
+      - Cool
+    initial: Warm
+# Warm - 370
+# Soft - 316
+# White - 262
+# Daylight - 208
+# Cool - 154
