@@ -1,0 +1,23 @@
+alias: Lights - LR Light Color - Template Select
+description: ''
+trigger:
+  - platform: state
+    entity_id: input_select.lr_lamps_color_select
+condition: []
+action:
+  - service: light.turn_on
+    entity_id: light.lr_lamp_group
+    data_template:
+      color_temp: |
+        {% if states('input_select.lr_lamps_color_select') == "Warm" %}
+          370
+        {% elif states('input_select.lr_lamps_color_select') == "Soft" %}
+          316
+        {% elif states('input_select.lr_lamps_color_select') == "White" %}
+          262
+        {% elif states('input_select.lr_lamps_color_select') == "Daylight" %}
+          208
+        {% elif states('input_select.lr_lamps_color_select') == "Cool" %}
+          154
+        {% endif %}
+mode: single
