@@ -1,0 +1,12 @@
+couch_pico_r:
+  module: controllerx
+  class: LutronCasetaProPicoLightController
+  controller: sensor.unused_pico_1
+  integration: state
+  light: light.lr_lamp_group
+  merge_mapping:
+    "2":
+        service: input_select.select_next
+        data:
+          entity_id: input_select.lr_lamps_color_select
+  smooth_power_on: true
